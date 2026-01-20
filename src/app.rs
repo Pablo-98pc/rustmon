@@ -3,26 +3,25 @@ use sysinfo::Pid;
 
 pub enum InputMode {
     Normal,
-    Popup
+    Popup,
 }
 
 pub struct AppState {
     pub state: TableState,
-    pub mode : InputMode,
+    pub mode: InputMode,
     pub pid_to_kill: Option<Pid>,
-    pub cpu_history : Vec<u64>,
-    pub input: String    
-    // Aquí pondremos pronto el 'mode' y 'pid_to_kill'
+    pub cpu_history: Vec<u64>,
+    pub input: String, // Aquí pondremos pronto el 'mode' y 'pid_to_kill'
 }
 
 impl AppState {
     pub fn new() -> AppState {
         AppState {
             state: TableState::default(),
-            mode:InputMode::Normal,
-            pid_to_kill:None,
+            mode: InputMode::Normal,
+            pid_to_kill: None,
             cpu_history: Vec::new(),
-            input: String::new()
+            input: String::new(),
         }
     }
 
@@ -54,7 +53,7 @@ impl AppState {
         self.state.select(None);
     }
 
-    pub fn on_tick (&mut self, cpu_usage: f64){
+    pub fn on_tick(&mut self, cpu_usage: f64) {
         self.cpu_history.push(cpu_usage as u64);
         if self.cpu_history.len() >= 40 {
             self.cpu_history.remove(0);
