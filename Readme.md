@@ -19,7 +19,7 @@ Features:
 
 Asegúrate de tener Rust y Cargo instalados en tu sistema.
 
-1.Clona el repositorio:git clone https://github.com/TU_USUARIO/rustmon.git
+1.Clona el repositorio:git clone https://github.com/Pablo-98pc/rustmon.git
 
 2.Ejecuta el programa (recomendado usar --release para mayor rendimiento y precisión en los datos):cargo run --release
 
@@ -36,5 +36,5 @@ RustMon está diseñado para ser controlado íntegramente con el teclado. Aquí 
     -Esc Cancelar / Limpiar: Cierra popups o borra el filtro de búsqueda.
 
     -(Escribir)Buscador: Escribe cualquier letra para filtrar procesos por nombre en tiempo real.
-    
+
     -BackspaceBorrar: Elimina el último carácter del filtro de búsqueda.
